@@ -244,13 +244,13 @@
             display: none;
             background: rgba(255, 255, 255, 0.1);
             border: none;
-            width: 20px;
-            height: 20px;
+            width: 44px;
+            height: 44px;
             position: relative;
             cursor: pointer;
             z-index: 1001;
             padding: 0;
-            border-radius: 3px;
+            border-radius: 6px;
             transition: var(--transition);
         }
         
@@ -263,10 +263,10 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 16px;
-            height: 1px;
+            width: 24px;
+            height: 2px;
             background: var(--white);
-            border-radius: 1px;
+            border-radius: 2px;
             transition: var(--transition);
         }
         
@@ -274,10 +274,10 @@
         .menu-icon::after {
             content: '';
             position: absolute;
-            width: 16px;
-            height: 1px;
+            width: 24px;
+            height: 2px;
             background: var(--white);
-            border-radius: 1px;
+            border-radius: 2px;
             transition: var(--transition);
         }
         
@@ -309,7 +309,7 @@
             width: 100%;
             height: 100%;
             background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(7px);
+            backdrop-filter: blur(15px);
             z-index: 999;
             opacity: 0;
             visibility: hidden;
@@ -325,13 +325,13 @@
             position: fixed;
             top: 0;
             right: -100%;
-            width: 60%;
-            max-width: 200px;
+            width: 85%;
+            max-width: 320px;
             height: 100%;
             background: rgba(15, 23, 42, 0.98);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(20px);
             z-index: 1000;
-            padding: 45px 15px 25px;
+            padding: 90px 25px 35px;
             display: flex;
             flex-direction: column;
             transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -352,18 +352,18 @@
             color: var(--white);
             text-decoration: none;
             font-family: 'Outfit', sans-serif;
-            font-size: 1rem;
-            font-weight: 300;
-            padding: 8px 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 16px 20px;
             transition: var(--transition);
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            border-radius: 4px;
-            min-height: 30px;
+            border-radius: 8px;
+            min-height: 44px;
             display: flex;
             align-items: center;
             background: rgba(255, 255, 255, 0.05);
-            margin-bottom: 2px;
+            margin-bottom: 4px;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
         }
         
@@ -371,27 +371,27 @@
         .mobile-menu-links a:active {
             background: rgba(255, 78, 69, 0.2);
             color: var(--light-red);
-            padding-left: 10px;
+            padding-left: 25px;
         }
         
         .mobile-cta {
-            margin-top: 15px;
+            margin-top: 30px;
             width: 100%;
         }
         
         .mobile-menu-close {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 20px;
+            right: 20px;
             background: rgba(255, 78, 69, 0.15);
             border: none;
             color: var(--white);
-            font-size: 1rem;
+            font-size: 1.3rem;
             cursor: pointer;
-            padding: 5px;
+            padding: 10px;
             border-radius: 50%;
-            width: 22px;
-            height: 22px;
+            width: 44px;
+            height: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -430,7 +430,7 @@
         }
         
         .hero h1 {
-            font-size: 3.8rem;
+            font-size: 4.5rem;
             font-weight: 800;
             margin-bottom: 25px;
             line-height: 1.1;
@@ -438,6 +438,20 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            position: relative;
+        }
+        
+        .hero-innovation {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .hero-meets-opportunity {
+            font-size: 4.5rem;
+            font-weight: 800;
         }
         
         .hero-subtitle {
@@ -522,6 +536,138 @@
             border-color: var(--primary-red);
         }
         
+        /* ===== PARTNER SECTION (Now Second) ===== */
+        .partner-section {
+            background: transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .partner-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .partner-header h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+        
+        .partner-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-medium);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .partner-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .partner-logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            background: var(--bg-card);
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+            transition: var(--transition);
+        }
+        
+        .partner-logo-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(255, 78, 69, 0.15);
+            border-color: var(--primary-red);
+        }
+        
+        .partner-logo {
+            height: 160px;
+            width: auto;
+            max-width: 100%;
+            transition: var(--transition);
+            object-fit: contain;
+        }
+        
+        .partner-info {
+            padding: 40px;
+            background: var(--bg-card);
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+            transition: var(--transition);
+        }
+        
+        .partner-info:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(255, 78, 69, 0.15);
+            border-color: var(--primary-red);
+        }
+        
+        .partner-title {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            font-weight: 800;
+            margin-bottom: 20px;
+            font-family: 'Outfit', sans-serif;
+        }
+        
+        .partner-description {
+            font-size: 1.2rem;
+            color: var(--text-medium);
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+        
+        .partner-highlights {
+            background: rgba(255, 78, 69, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 40px;
+            border-left: 4px solid var(--primary-red);
+        }
+        
+        .partner-highlights h4 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .partner-highlights ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .partner-highlights li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+            color: var(--text-medium);
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .partner-highlights li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--primary-red);
+            font-weight: 700;
+        }
+        
+        .partner-cta {
+            margin-top: 40px;
+            text-align: center;
+        }
+        
         /* ===== ABOUT SECTION ===== */
         #about {
             background: transparent;
@@ -597,7 +743,7 @@
             margin-bottom: 0;
         }
         
-        /* ===== PHASES SECTION (Now before Timeline) ===== */
+        /* ===== PHASES SECTION ===== */
         .phases-section {
             background: transparent;
             position: relative;
@@ -690,7 +836,7 @@
             font-size: 1.2rem;
         }
         
-        /* ===== TIMELINE SECTION (Now after Phases) ===== */
+        /* ===== TIMELINE SECTION ===== */
         .timeline-section {
             background: transparent;
             position: relative;
@@ -778,137 +924,6 @@
             color: var(--text-medium);
             line-height: 1.6;
             font-size: 1rem;
-        }
-        
-        /* ===== PARTNER SECTION ===== */
-        .partner-section {
-            background: transparent;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .section-header h2 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-            color: var(--text-dark);
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 70px;
-            height: 4px;
-            background: var(--red-gradient);
-            border-radius: 2px;
-        }
-        
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-medium);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-        
-        .partner-card {
-            background: var(--bg-card);
-            border-radius: 20px;
-            padding: 50px 30px;
-            box-shadow: var(--shadow-lg);
-            text-align: center;
-            max-width: 1100px;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid var(--border-light);
-            transition: var(--transition);
-            z-index: 2;
-        }
-        
-        .partner-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary-red);
-        }
-        
-        .partner-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: var(--red-gradient);
-        }
-        
-        .partner-logo {
-            height: 130px;
-            width: auto;
-            max-width: 100%;
-            margin-bottom: 40px;
-            transition: var(--transition);
-            object-fit: contain;
-        }
-        
-        .partner-logo:hover {
-            transform: scale(1.05);
-        }
-        
-        .partner-title {
-            font-size: 1.5rem;
-            color: var(--text-dark);
-            font-weight: 700;
-            margin-bottom: 25px;
-            font-family: 'Outfit', sans-serif;
-        }
-        
-        .partner-description {
-            font-size: 1.2rem;
-            color: var(--text-medium);
-            line-height: 1.7;
-            margin-bottom: 40px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .role-list {
-            list-style: none;
-            margin-top: 40px;
-            text-align: left;
-            max-width: 700px;
-            margin: 40px auto 0;
-        }
-        
-        .role-list li {
-            margin-bottom: 15px;
-            padding-left: 35px;
-            position: relative;
-            color: var(--text-dark);
-            line-height: 1.7;
-            font-size: 1.1rem;
-        }
-        
-        .role-list li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--primary-red);
-            font-weight: 700;
-            font-size: 1.5rem;
         }
         
         /* ===== REGISTRATION SECTION ===== */
@@ -1253,9 +1268,15 @@
             }
             
             .hero h1 {
-                font-size: 2.5rem; /* 36px on mobile */
-                line-height: 1.1;
-                margin-bottom: 20px;
+                font-size: 3rem;
+            }
+            
+            .hero-innovation {
+                font-size: 2.2rem;
+            }
+            
+            .hero-meets-opportunity {
+                font-size: 3rem;
             }
             
             .hero-subtitle {
@@ -1277,18 +1298,30 @@
                 font-size: 1rem;
             }
             
-            /* Section Headers */
-            .section-header {
-                margin-bottom: 40px;
+            /* Partner Section - Mobile */
+            .partner-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
             
-            .section-header h2 {
+            .partner-logo-container {
+                padding: 30px;
+            }
+            
+            .partner-logo {
+                height: 120px;
+            }
+            
+            .partner-info {
+                padding: 30px;
+            }
+            
+            .partner-header h2 {
                 font-size: 2.2rem;
             }
             
-            .section-subtitle {
+            .partner-subtitle {
                 font-size: 1.1rem;
-                padding: 0 10px;
             }
             
             /* About Section - Stack to single column */
@@ -1364,27 +1397,6 @@
             
             .timeline-item p {
                 font-size: 1rem;
-            }
-            
-            /* Partner Section */
-            .partner-card {
-                padding: 40px 25px;
-            }
-            
-            .partner-logo {
-                height: 100px;
-                margin-bottom: 30px;
-                max-width: 90%;
-            }
-            
-            .partner-description {
-                font-size: 1.1rem;
-            }
-            
-            .role-list li {
-                font-size: 1rem;
-                padding-left: 30px;
-                margin-bottom: 12px;
             }
             
             /* Benefits Grid - Stack to single column */
@@ -1509,8 +1521,15 @@
             }
             
             .hero h1 {
-                font-size: 2rem; /* 32px on small mobile */
-                margin-bottom: 15px;
+                font-size: 2.2rem;
+            }
+            
+            .hero-innovation {
+                font-size: 1.6rem;
+            }
+            
+            .hero-meets-opportunity {
+                font-size: 2.2rem;
             }
             
             .hero-subtitle {
@@ -1524,16 +1543,24 @@
                 padding: 14px 20px;
             }
             
-            /* Section Headers */
-            .section-header {
-                margin-bottom: 35px;
+            /* Partner Section */
+            .partner-logo-container {
+                padding: 25px;
             }
             
-            .section-header h2 {
+            .partner-logo {
+                height: 100px;
+            }
+            
+            .partner-info {
+                padding: 25px;
+            }
+            
+            .partner-header h2 {
                 font-size: 1.8rem;
             }
             
-            .section-subtitle {
+            .partner-subtitle {
                 font-size: 1rem;
             }
             
@@ -1589,26 +1616,6 @@
                 font-size: 0.95rem;
             }
             
-            /* Partner Section */
-            .partner-card {
-                padding: 30px 20px;
-            }
-            
-            .partner-logo {
-                height: 80px;
-                margin-bottom: 25px;
-            }
-            
-            .partner-description {
-                font-size: 1rem;
-            }
-            
-            .role-list li {
-                font-size: 0.95rem;
-                padding-left: 25px;
-                margin-bottom: 10px;
-            }
-            
             /* Footer - More compact */
             footer {
                 padding: 40px 0 20px;
@@ -1642,45 +1649,6 @@
                 padding-top: 20px;
             }
         }
-        
-        /* Small Mobile: 360px and below */
-        @media (max-width: 360px) {
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-            
-            .section-header h2 {
-                font-size: 1.6rem;
-            }
-            
-            .mobile-menu-content {
-                width: 90%;
-                padding: 80px 20px 30px;
-            }
-            
-            .partner-logo {
-                height: 70px;
-            }
-            
-            .footer-links-horizontal {
-                flex-direction: column;
-                gap: 5px;
-            }
-            
-            .footer-links-horizontal a {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .hero-buttons .btn {
-                padding: 12px 18px;
-                font-size: 0.9rem;
-            }
-        }
     </style>
 </head>
 <body>
@@ -1697,10 +1665,10 @@
             <nav>
                 <div class="nav-links">
                     <a href="#hero">Home</a>
+                    <a href="#partners">Partners</a>
                     <a href="#about">About</a>
                     <a href="#phases">Phases</a>
                     <a href="#timeline">Timeline</a>
-                    <a href="#partners">Partners</a>
                     <a href="#register">Register</a>
                 </div>
                 
@@ -1722,10 +1690,10 @@
         
         <div class="mobile-menu-links">
             <a href="#hero">Home</a>
+            <a href="#partners">Partners</a>
             <a href="#about">About BrainLink</a>
             <a href="#phases">Competition Phases</a>
             <a href="#timeline">Timeline</a>
-            <a href="#partners">Partners</a>
             <a href="#register">Registration</a>
         </div>
         
@@ -1739,16 +1707,58 @@
     <section id="hero" class="hero">
         <div class="container">
             <div class="hero-content fade-in">
-                <h1>Where <span style="color: var(--primary-red)">Innovation</span> Meets Opportunity</h1>
+                <h1>
+                    <span class="hero-innovation">Innovation</span>
+                    <span class="hero-meets-opportunity">Meets Opportunity</span>
+                </h1>
                 <p class="hero-subtitle">
-                    The ultimate innovation challenge bringing together Algeria's brightest business and engineering minds to solve real-world problems with Henkel Algeria.
+                    Join Algeria's premier innovation challenge that bridges business strategy with engineering excellence. BrainLink brings together the brightest minds to solve real industry challenges with Henkel Algeria.
                 </p>
                 <div class="hero-buttons">
                     <a href="#register" class="btn btn-primary">
                         Register Now
                         <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                    <a href="#partners" class="btn btn-secondary">Learn About Our Partners</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTNER SECTION (Now Second) -->
+    <section id="partners" class="partner-section">
+        <div class="container">
+            <div class="partner-header fade-in">
+                <h2>Proudly Partnered With Industry Leaders</h2>
+                <p class="partner-subtitle">BrainLink brings together academic excellence and industry expertise to create real-world impact</p>
+            </div>
+            
+            <div class="partner-container fade-in">
+                <div class="partner-logo-container">
+                    <img src="1200px-Henkel-Logo.svg.png" alt="Henkel Algeria" class="partner-logo">
+                </div>
+                
+                <div class="partner-info">
+                    <h3 class="partner-title">Henkel Algeria</h3>
+                    <p class="partner-description">
+                        As a global leader in innovation and sustainability, Henkel Algeria provides the real-world challenges and industry mentorship that make BrainLink unique. Their commitment to developing young talent in Algeria drives the competition's mission.
+                    </p>
+                    
+                    <div class="partner-highlights">
+                        <h4>What Henkel Brings to BrainLink:</h4>
+                        <ul>
+                            <li>Real business challenges from Henkel's operations in Algeria</li>
+                            <li>Direct mentorship from industry professionals and executives</li>
+                            <li>Access to cutting-edge resources and facilities</li>
+                            <li>Opportunities for internships and career development</li>
+                            <li>Evaluation based on real industry standards and metrics</li>
+                            <li>Prizes and recognition from a global industry leader</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="partner-cta">
+                        <p>Learn how Henkel is shaping innovation in Algeria through strategic partnerships and talent development.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1798,7 +1808,7 @@
         </div>
     </section>
 
-    <!-- PHASES SECTION (Now before Timeline) -->
+    <!-- PHASES SECTION -->
     <section id="phases" class="phases-section">
         <div class="container">
             <div class="section-header fade-in">
@@ -1840,7 +1850,7 @@
         </div>
     </section>
 
-    <!-- TIMELINE SECTION (Now after Phases) -->
+    <!-- TIMELINE SECTION -->
     <section id="timeline" class="timeline-section">
         <div class="container">
             <div class="section-header fade-in">
@@ -1900,33 +1910,6 @@
         </div>
     </section>
 
-    <!-- PARTNER SECTION -->
-    <section id="partners" class="partner-section">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2>In Partnership With</h2>
-                <p class="section-subtitle">Collaborating for innovation and excellence</p>
-            </div>
-            
-            <div class="partner-card fade-in">
-                <img src="1200px-Henkel-Logo.svg.png" alt="Henkel Algeria" class="partner-logo">
-                <p class="partner-description">
-                    Henkel Algeria, a leader in innovation and sustainability, partners with BrainLink to provide real-world challenges and industry expertise.
-                </p>
-                
-                <div class="partner-title">Henkel's Role in the Competition</div>
-                <ul class="role-list">
-                    <li>Provides real business challenges for participants to solve</li>
-                    <li>Offers industry expertise and mentorship throughout the competition</li>
-                    <li>Provides access to professional resources and networking opportunities</li>
-                    <li>Evaluates final solutions with industry standards</li>
-                    <li>Offers internship and career opportunities to top performers</li>
-                    <li>Contributes to prizes and recognition for winning teams</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
     <!-- REGISTRATION SECTION -->
     <section id="register" class="registration-section">
         <div class="container">
@@ -1982,7 +1965,7 @@
             <div class="final-cta fade-in" style="transition-delay: 0.5s">
                 <h2>Your Innovation Journey Starts Here</h2>
                 <p>Don't miss this opportunity to showcase your skills, solve real problems, and make a lasting impact on Algeria's innovation landscape.</p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSctFrlnTBuZzuIsPMC42GvuoX54NATzB7wg4BKZ0HIvtKH6Qw/viewform?usp=sharing&ouid=117879588815569073810" class="btn btn-primary" target="_blank">
+                <a href="https://forms.google.com/your-registration-link" class="btn btn-primary" target="_blank">
                     Register Your Team Now
                     <i class="fas fa-arrow-right"></i>
                 </a>
@@ -2003,10 +1986,10 @@
                     <h4 class="footer-heading">Quick Links</h4>
                     <ul class="footer-links-horizontal">
                         <li><a href="#hero">Home</a></li>
+                        <li><a href="#partners">Partners</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#phases">Phases</a></li>
                         <li><a href="#timeline">Timeline</a></li>
-                        <li><a href="#partners">Partners</a></li>
                         <li><a href="#register">Register</a></li>
                     </ul>
                     
