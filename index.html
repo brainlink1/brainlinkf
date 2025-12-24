@@ -9,17 +9,18 @@
     <style>
         /* ===== BRAND IDENTITY COLORS & TYPOGRAPHY ===== */
         :root {
-            /* Light theme with burgundy accents */
+            /* Based on BrainLink identity - Deep burgundy theme */
             --primary-dark: #1A1F36;
-            --primary-red: #8B0000;
-            --accent-red: #B22222;
-            --secondary-red: #D2691E;
+            --primary-red: #8B0000;        /* Dark burgundy from identity */
+            --accent-red: #9D2235;         /* Adjusted red from identity */
+            --secondary-red: #B53143;      /* Lighter accent red */
             --light-bg: #F8F9FA;
             --card-bg: #FFFFFF;
             --white: #FFFFFF;
             --text-dark: #1A1F36;
             --text-light: #4B5563;
             --border-color: #E5E7EB;
+            --header-dark: rgba(26, 31, 54, 0.95); /* Darker transparent header */
             
             /* Effects */
             --shadow-sm: 0 4px 12px rgba(139, 0, 0, 0.08);
@@ -102,7 +103,7 @@
             height: 100%;
             background: 
                 radial-gradient(circle at 20% 80%, rgba(139, 0, 0, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(210, 105, 30, 0.05) 0%, transparent 50%);
+                radial-gradient(circle at 80% 20%, rgba(157, 34, 53, 0.05) 0%, transparent 50%);
             animation: moveBackground 60s infinite linear;
         }
         
@@ -118,7 +119,7 @@
             }
         }
         
-        /* ATTRACTIVE 3D ELEMENTS - NOT SQUARES */
+        /* ATTRACTIVE 3D ELEMENTS */
         .shapes-3d {
             position: absolute;
             width: 100%;
@@ -183,72 +184,22 @@
         .ring-3 { transform: rotateY(90deg); }
         .ring-4 { transform: rotateY(135deg); }
         
-        /* 3D PYRAMID */
-        .pyramid {
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            transform-style: preserve-3d;
-            animation: rotatePyramid 25s infinite linear;
-        }
-        
-        .pyramid:nth-child(4) {
-            top: 20%;
-            right: 10%;
-        }
-        
-        .pyramid:nth-child(5) {
-            bottom: 10%;
-            right: 30%;
-        }
-        
-        @keyframes rotatePyramid {
-            0% {
-                transform: rotateX(0) rotateY(0) rotateZ(0);
-            }
-            100% {
-                transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
-            }
-        }
-        
-        .pyramid-face {
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-left: 40px solid transparent;
-            border-right: 40px solid transparent;
-            border-bottom: 80px solid rgba(139, 0, 0, 0.1);
-        }
-        
-        .front { transform: rotateX(30deg) translateZ(20px); }
-        .back { transform: rotateX(30deg) rotateY(180deg) translateZ(20px); }
-        .right { transform: rotateX(30deg) rotateY(90deg) translateZ(20px); }
-        .left { transform: rotateX(30deg) rotateY(-90deg) translateZ(20px); }
-        
-        /* CONNECTION LINES */
-        .connection-line {
-            position: absolute;
-            background: linear-gradient(90deg, transparent, rgba(139, 0, 0, 0.1), transparent);
-            height: 1px;
-            transform-origin: left center;
-        }
-        
-        /* ===== MODERN HEADER ===== */
+        /* ===== DARK TRANSPARENT HEADER ===== */
         header {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: var(--header-dark);
+            backdrop-filter: blur(15px);
             padding: 20px 0;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid rgba(139, 0, 0, 0.2);
             transition: var(--transition);
         }
         
         .header-scrolled {
             padding: 12px 0;
-            box-shadow: var(--shadow-md);
+            background: rgba(26, 31, 54, 0.98);
         }
         
         .nav-container {
@@ -264,9 +215,9 @@
         }
         
         .logo-img {
-            height: 40px;
+            height: 45px;
             width: auto;
-            filter: drop-shadow(0 2px 4px rgba(139, 0, 0, 0.2));
+            /* Removed shadow filter as requested */
             transition: var(--transition);
         }
         
@@ -277,7 +228,7 @@
         }
         
         .nav-links a {
-            color: var(--text-dark);
+            color: var(--white);
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
@@ -299,7 +250,7 @@
         }
         
         .nav-links a:hover {
-            color: var(--primary-red);
+            color: var(--accent-red);
         }
         
         .nav-links a:hover::after {
@@ -326,7 +277,7 @@
             transform: translate(-50%, -50%);
             width: 20px;
             height: 2px;
-            background: var(--primary-red);
+            background: var(--white);
             border-radius: 2px;
             transition: var(--transition);
         }
@@ -337,7 +288,7 @@
             position: absolute;
             width: 20px;
             height: 2px;
-            background: var(--primary-red);
+            background: var(--white);
             border-radius: 2px;
             transition: var(--transition);
         }
@@ -367,7 +318,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.95) 100%);
+            background: linear-gradient(135deg, rgba(26, 31, 54, 0.95) 0%, rgba(42, 47, 74, 0.95) 100%);
             padding-top: 100px;
             position: relative;
             overflow: hidden;
@@ -380,8 +331,8 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 20% 80%, rgba(139, 0, 0, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(210, 105, 30, 0.05) 0%, transparent 50%);
+                radial-gradient(circle at 20% 80%, rgba(139, 0, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(157, 34, 53, 0.15) 0%, transparent 50%);
             z-index: 1;
             filter: blur(60px);
             opacity: 0.5;
@@ -393,11 +344,11 @@
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
-            background: var(--card-bg);
+            background: rgba(26, 31, 54, 0.8);
+            backdrop-filter: blur(10px);
             padding: 60px 40px;
             border-radius: 30px;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border-color);
+            border: 1px solid rgba(139, 0, 0, 0.3);
         }
         
         .hero h1 {
@@ -405,7 +356,7 @@
             font-weight: 700;
             margin-bottom: 24px;
             line-height: 1.1;
-            color: var(--primary-dark);
+            color: var(--white);
         }
         
         .hero-highlight {
@@ -437,7 +388,7 @@
         
         .hero-subtitle {
             font-size: 1.25rem;
-            color: var(--text-light);
+            color: rgba(255, 255, 255, 0.85);
             margin-bottom: 48px;
             line-height: 1.7;
         }
@@ -486,26 +437,26 @@
         .btn-primary {
             background: linear-gradient(135deg, var(--primary-red), var(--accent-red));
             color: var(--white);
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 8px 24px rgba(139, 0, 0, 0.3);
         }
         
         .btn-primary:hover {
             transform: translateY(-4px) scale(1.05);
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 12px 32px rgba(139, 0, 0, 0.4);
         }
         
         .btn-secondary {
-            background: var(--white);
-            color: var(--primary-dark);
-            border: 2px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
         }
         
         .btn-secondary:hover {
             transform: translateY(-4px);
-            border-color: var(--primary-red);
-            color: var(--primary-red);
-            box-shadow: var(--shadow-md);
+            border-color: var(--accent-red);
+            background: rgba(139, 0, 0, 0.1);
+            box-shadow: 0 8px 24px rgba(139, 0, 0, 0.2);
         }
         
         /* ===== PARTNER SECTION ===== */
@@ -524,7 +475,7 @@
             height: 100%;
             background: 
                 radial-gradient(circle at 10% 20%, rgba(139, 0, 0, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 90% 80%, rgba(210, 105, 30, 0.03) 0%, transparent 50%);
+                radial-gradient(circle at 90% 80%, rgba(157, 34, 53, 0.03) 0%, transparent 50%);
             z-index: -1;
         }
         
@@ -567,7 +518,7 @@
             padding: 60px;
             box-shadow: var(--shadow-lg);
             text-align: center;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             position: relative;
             overflow: hidden;
@@ -577,7 +528,7 @@
         
         .partner-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 30px 80px rgba(139, 0, 0, 0.12);
+            box-shadow: 0 30px 80px rgba(139, 0, 0, 0.15);
         }
         
         .partner-card::before {
@@ -591,16 +542,47 @@
         }
         
         .partner-logo {
-            height: 50px;
-            margin-bottom: 32px;
+            height: 80px; /* Larger logo as requested */
+            margin-bottom: 40px;
             width: auto;
+        }
+        
+        .partner-title {
+            font-size: 1.25rem;
+            color: var(--primary-red);
+            font-weight: 600;
+            margin-bottom: 20px;
         }
         
         .partner-description {
             font-size: 1.125rem;
             color: var(--text-light);
             line-height: 1.8;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .role-list {
+            list-style: none;
+            margin-top: 30px;
+            text-align: left;
+            max-width: 600px;
+            margin: 30px auto 0;
+        }
+        
+        .role-list li {
+            margin-bottom: 15px;
+            padding-left: 32px;
+            position: relative;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+        
+        .role-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-red);
+            font-weight: 600;
         }
         
         /* ===== ABOUT SECTION ===== */
@@ -766,86 +748,9 @@
             font-weight: 600;
         }
         
-        /* ===== TIMELINE SECTION ===== */
-        .timeline-section {
-            background: var(--card-bg);
-            position: relative;
-        }
-        
-        .timeline-container {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .timeline-container::before {
-            content: '';
-            position: absolute;
-            left: 20px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--primary-red), var(--accent-red));
-        }
-        
-        .timeline-item {
-            margin-bottom: 40px;
-            padding-left: 60px;
-            position: relative;
-        }
-        
-        .timeline-marker {
-            position: absolute;
-            left: 12px;
-            top: 0;
-            width: 20px;
-            height: 20px;
-            background: var(--white);
-            border: 4px solid var(--primary-red);
-            border-radius: 50%;
-            z-index: 2;
-            box-shadow: 0 0 10px rgba(139, 0, 0, 0.2);
-        }
-        
-        .timeline-point {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 28px;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-            border: 1px solid var(--border-color);
-        }
-        
-        .timeline-point:hover {
-            transform: translateX(8px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .timeline-date {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--primary-red);
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .timeline-point h4 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--primary-dark);
-        }
-        
-        .timeline-point p {
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-        
         /* ===== REGISTRATION SECTION ===== */
         .registration-section {
-            background: linear-gradient(135deg, rgba(248, 249, 250, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%);
+            background: linear-gradient(135deg, rgba(26, 31, 54, 0.95) 0%, rgba(42, 47, 74, 0.95) 100%);
             position: relative;
             overflow: hidden;
         }
@@ -858,8 +763,16 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 30% 20%, rgba(139, 0, 0, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 70% 80%, rgba(210, 105, 30, 0.05) 0%, transparent 50%);
+                radial-gradient(circle at 30% 20%, rgba(139, 0, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(157, 34, 53, 0.15) 0%, transparent 50%);
+        }
+        
+        .registration-section .section-header h2 {
+            color: var(--white);
+        }
+        
+        .registration-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.85);
         }
         
         .benefits-grid {
@@ -870,10 +783,11 @@
         }
         
         .benefit-card {
-            background: var(--card-bg);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
             border-radius: 16px;
             padding: 32px;
-            border: 1px solid var(--border-color);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
@@ -881,7 +795,8 @@
         
         .benefit-card:hover {
             transform: translateY(-8px) scale(1.02);
-            box-shadow: var(--shadow-lg);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(139, 0, 0, 0.3);
         }
         
         .benefit-card::after {
@@ -893,7 +808,7 @@
             height: 0;
             border-style: solid;
             border-width: 0 60px 60px 0;
-            border-color: transparent rgba(139, 0, 0, 0.1) transparent transparent;
+            border-color: transparent rgba(139, 0, 0, 0.2) transparent transparent;
         }
         
         .benefit-icon {
@@ -906,34 +821,34 @@
             font-size: 1.25rem;
             font-weight: 600;
             margin-bottom: 12px;
-            color: var(--primary-dark);
+            color: var(--white);
         }
         
         .benefit-card p {
-            color: var(--text-light);
+            color: rgba(255, 255, 255, 0.8);
             line-height: 1.7;
         }
         
         .eligibility-box {
-            background: var(--card-bg);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
             border-radius: 16px;
             padding: 40px;
-            border: 1px solid var(--border-color);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             margin: 60px 0;
             transition: var(--transition);
-            box-shadow: var(--shadow-md);
         }
         
         .eligibility-box:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
+            background: rgba(255, 255, 255, 0.15);
         }
         
         .eligibility-box h3 {
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 24px;
-            color: var(--primary-dark);
+            color: var(--white);
         }
         
         .eligibility-list {
@@ -945,7 +860,7 @@
             padding-left: 32px;
             position: relative;
             line-height: 1.7;
-            color: var(--text-light);
+            color: rgba(255, 255, 255, 0.85);
         }
         
         .eligibility-list li::before {
@@ -958,13 +873,12 @@
         }
         
         .final-cta {
-            background: var(--card-bg);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
             border-radius: 24px;
             padding: 60px;
             text-align: center;
-            box-shadow: var(--shadow-lg);
-            margin-top: 60px;
-            border: 1px solid var(--border-color);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
@@ -972,7 +886,7 @@
         
         .final-cta:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(139, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.15);
         }
         
         .final-cta::before {
@@ -989,12 +903,12 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 20px;
-            color: var(--primary-dark);
+            color: var(--white);
         }
         
         .final-cta p {
             font-size: 1.125rem;
-            color: var(--text-light);
+            color: rgba(255, 255, 255, 0.85);
             margin-bottom: 40px;
             max-width: 600px;
             margin-left: auto;
@@ -1018,8 +932,8 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 20% 30%, rgba(139, 0, 0, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(210, 105, 30, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 20% 30%, rgba(139, 0, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(157, 34, 53, 0.15) 0%, transparent 50%);
         }
         
         .footer-content {
@@ -1038,7 +952,6 @@
         .footer-logo {
             height: 40px;
             margin-bottom: 24px;
-            filter: drop-shadow(0 2px 4px rgba(139, 0, 0, 0.3));
         }
         
         .footer-tagline {
@@ -1165,28 +1078,17 @@
                 font-size: 2rem;
             }
             
+            .partner-logo {
+                height: 60px; /* Adjusted for mobile */
+            }
+            
             .partner-card,
             .feature-card,
             .phase-card,
-            .timeline-point,
             .benefit-card,
             .eligibility-box,
             .final-cta {
                 padding: 32px 24px;
-            }
-            
-            .timeline-container::before {
-                left: 16px;
-            }
-            
-            .timeline-item {
-                padding-left: 48px;
-            }
-            
-            .timeline-marker {
-                left: 8px;
-                width: 16px;
-                height: 16px;
             }
             
             .footer-content {
@@ -1204,7 +1106,7 @@
             
             /* SMALLER LOGO AND ICONS ON MOBILE */
             .logo-img {
-                height: 32px;
+                height: 35px;
             }
             
             .mobile-menu-btn {
@@ -1250,8 +1152,7 @@
                 opacity: 0.3;
             }
             
-            .sphere,
-            .pyramid {
+            .sphere {
                 display: none; /* Hide 3D shapes on mobile */
             }
         }
@@ -1296,7 +1197,11 @@
             
             /* EVEN SMALLER ON MOBILE */
             .logo-img {
-                height: 28px;
+                height: 30px;
+            }
+            
+            .partner-logo {
+                height: 50px;
             }
             
             .mobile-menu-btn {
@@ -1345,7 +1250,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(26, 31, 54, 0.95);
+            background: rgba(26, 31, 54, 0.98);
             backdrop-filter: blur(10px);
             z-index: 999;
             opacity: 0;
@@ -1365,14 +1270,14 @@
             width: 85%;
             max-width: 300px;
             height: 100%;
-            background: var(--card-bg);
+            background: rgba(26, 31, 54, 0.95);
+            backdrop-filter: blur(20px);
             z-index: 1000;
             padding: 80px 24px 32px;
             display: flex;
             flex-direction: column;
             transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
-            border-left: 1px solid var(--border-color);
+            border-left: 1px solid rgba(139, 0, 0, 0.3);
         }
         
         .mobile-menu-content.active {
@@ -1386,17 +1291,17 @@
         }
         
         .mobile-menu-links a {
-            color: var(--text-dark);
+            color: var(--white);
             text-decoration: none;
             font-size: 1.125rem;
             font-weight: 500;
             padding: 12px 0;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             transition: var(--transition);
         }
         
         .mobile-menu-links a:hover {
-            color: var(--primary-red);
+            color: var(--accent-red);
             padding-left: 12px;
         }
         
@@ -1409,9 +1314,9 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            background: none;
+            background: rgba(139, 0, 0, 0.3);
             border: none;
-            color: var(--primary-red);
+            color: var(--white);
             font-size: 1.25rem;
             cursor: pointer;
             padding: 8px;
@@ -1425,7 +1330,7 @@
         }
         
         .mobile-menu-close:hover {
-            background: var(--light-bg);
+            background: rgba(139, 0, 0, 0.5);
             transform: rotate(90deg);
         }
     </style>
@@ -1459,18 +1364,6 @@
                     <div class="sphere-ring ring-4"></div>
                 </div>
             </div>
-            <div class="pyramid">
-                <div class="pyramid-face front"></div>
-                <div class="pyramid-face back"></div>
-                <div class="pyramid-face right"></div>
-                <div class="pyramid-face left"></div>
-            </div>
-            <div class="pyramid">
-                <div class="pyramid-face front"></div>
-                <div class="pyramid-face back"></div>
-                <div class="pyramid-face right"></div>
-                <div class="pyramid-face left"></div>
-            </div>
         </div>
     </div>
 
@@ -1486,8 +1379,8 @@
                     <a href="#hero">Home</a>
                     <a href="#about">About</a>
                     <a href="#phases">Phases</a>
-                    <a href="#timeline">Schedule</a>
                     <a href="#partners">Partners</a>
+                    <a href="#register">Register</a>
                 </div>
                 
                 <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
@@ -1510,7 +1403,6 @@
             <a href="#hero">Home</a>
             <a href="#about">About BrainLink</a>
             <a href="#phases">Competition Phases</a>
-            <a href="#timeline">Schedule</a>
             <a href="#partners">Partners</a>
             <a href="#register">Registration</a>
         </div>
@@ -1532,7 +1424,7 @@
                     The ultimate innovation challenge bringing together Algeria's brightest business and engineering minds to solve real-world problems with Henkel Algeria.
                 </p>
                 <div class="hero-buttons">
-                    <a href="https://forms.google.com/your-registration-link" class="btn btn-primary" target="_blank">
+                    <a href="#register" class="btn btn-primary">
                         Register Now
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -1553,8 +1445,18 @@
             <div class="partner-card fade-in">
                 <img src="1200px-Henkel-Logo.svg.png" alt="Henkel Algeria" class="partner-logo">
                 <p class="partner-description">
-                    Henkel Algeria, a leader in innovation and sustainability, is proud to partner with BrainLink to empower the next generation of problem-solvers.
+                    Henkel Algeria, a leader in innovation and sustainability, partners with BrainLink to provide real-world challenges and industry expertise.
                 </p>
+                
+                <div class="partner-title">Henkel's Role in the Competition</div>
+                <ul class="role-list">
+                    <li>Provides real business challenges for participants to solve</li>
+                    <li>Offers industry expertise and mentorship throughout the competition</li>
+                    <li>Provides access to professional resources and networking opportunities</li>
+                    <li>Evaluates final solutions with industry standards</li>
+                    <li>Offers internship and career opportunities to top performers</li>
+                    <li>Contributes to prizes and recognition for winning teams</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -1566,7 +1468,7 @@
                 <div class="about-text fade-in">
                     <h2>What is BrainLink?</h2>
                     <p>
-                        BrainLink is not just a competition—it's a launchpad for innovation. We unite ambitious business strategists and technical engineering minds to co-create solutions that matter.
+                        BrainLink is not just a competition—it's a launchpad for innovation. We unite ambitious business strategists and technical engineering minds to co-create solutions that matter. This intersection of disciplines creates groundbreaking solutions to real-world challenges.
                     </p>
                     <a href="#phases" class="btn btn-primary">
                         View Competition Phases
@@ -1580,7 +1482,7 @@
                             <i class="fas fa-users"></i>
                         </div>
                         <h3>Cross-Disciplinary Collaboration</h3>
-                        <p>Business meets engineering. Strategy meets execution. Your diverse team is your superpower.</p>
+                        <p>Business meets engineering. Strategy meets execution. Your diverse team is your superpower in solving complex challenges.</p>
                     </div>
                     
                     <div class="feature-card">
@@ -1588,7 +1490,7 @@
                             <i class="fas fa-bullseye"></i>
                         </div>
                         <h3>Real-World Impact</h3>
-                        <p>Solve actual business challenges from Henkel. Your solution could shape the future.</p>
+                        <p>Solve actual business challenges from Henkel. Your solution could shape the future of industry in Algeria.</p>
                     </div>
                     
                     <div class="feature-card">
@@ -1596,7 +1498,7 @@
                             <i class="fas fa-rocket"></i>
                         </div>
                         <h3>Career Acceleration</h3>
-                        <p>Stand out to recruiters, build your portfolio, and unlock opportunities with industry leaders.</p>
+                        <p>Stand out to recruiters, build your portfolio, and unlock opportunities with industry leaders and partners.</p>
                     </div>
                 </div>
             </div>
@@ -1620,10 +1522,10 @@
                     <h3>Semi-Finals</h3>
                     <p style="color: var(--text-light); margin-bottom: 16px;">Digital Arena</p>
                     <ul class="phase-details">
-                        <li>Fully online competition</li>
-                        <li>Submit innovative solution deck</li>
-                        <li>Virtual presentations</li>
-                        <li>Top teams advance to finals</li>
+                        <li>Fully online competition platform</li>
+                        <li>Submit innovative solution proposals</li>
+                        <li>Virtual presentations to industry judges</li>
+                        <li>Top teams selected for the grand finale</li>
                     </ul>
                 </div>
                 
@@ -1635,83 +1537,11 @@
                     <h3>Grand Finale</h3>
                     <p style="color: var(--text-light); margin-bottom: 16px;">The Ultimate Showdown</p>
                     <ul class="phase-details">
-                        <li>At Henkel headquarters</li>
-                        <li>Face-to-face mentoring</li>
-                        <li>Live pitch presentations</li>
-                        <li>Winner announcement ceremony</li>
+                        <li>Presentation at Henkel headquarters</li>
+                        <li>Face-to-face mentoring sessions</li>
+                        <li>Live pitch presentations to executive panel</li>
+                        <li>Winner announcement and awards ceremony</li>
                     </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TIMELINE SECTION -->
-    <section id="timeline" class="timeline-section">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2>Event Timeline</h2>
-                <p class="section-subtitle">Mark your calendar</p>
-            </div>
-            
-            <div class="timeline-container">
-                <div class="timeline-item fade-in">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-point">
-                        <div class="timeline-date">
-                            <i class="far fa-calendar"></i>
-                            December 16
-                        </div>
-                        <h4>Registration Opens</h4>
-                        <p>Competition registration portal goes live for all participants.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item fade-in" style="transition-delay: 0.1s">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-point">
-                        <div class="timeline-date">
-                            <i class="far fa-calendar"></i>
-                            December 26
-                        </div>
-                        <h4>Registration Closes</h4>
-                        <p>Final day to register your team for the competition.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item fade-in" style="transition-delay: 0.2s">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-point">
-                        <div class="timeline-date">
-                            <i class="far fa-calendar"></i>
-                            December 28
-                        </div>
-                        <h4>Kick-off Workshop</h4>
-                        <p>Virtual orientation and strategy planning session.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item fade-in" style="transition-delay: 0.3s">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-point">
-                        <div class="timeline-date">
-                            <i class="far fa-calendar"></i>
-                            January 3-5
-                        </div>
-                        <h4>Mentoring Sessions</h4>
-                        <p>Expert guidance and feedback from industry professionals.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item fade-in" style="transition-delay: 0.4s">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-point">
-                        <div class="timeline-date">
-                            <i class="far fa-calendar"></i>
-                            January 18
-                        </div>
-                        <h4>Grand Finale</h4>
-                        <p>In-person final event and winner announcement at Henkel.</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1731,7 +1561,7 @@
                         <i class="fas fa-trophy"></i>
                     </div>
                     <h4>Compete for Prizes</h4>
-                    <p>Win prestigious awards and gain recognition.</p>
+                    <p>Win prestigious awards, cash prizes, and industry recognition.</p>
                 </div>
                 
                 <div class="benefit-card fade-in" style="transition-delay: 0.1s">
@@ -1739,7 +1569,7 @@
                         <i class="fas fa-network-wired"></i>
                     </div>
                     <h4>Network with Leaders</h4>
-                    <p>Connect with industry experts and fellow innovators.</p>
+                    <p>Connect with industry experts, mentors, and fellow innovators.</p>
                 </div>
                 
                 <div class="benefit-card fade-in" style="transition-delay: 0.2s">
@@ -1747,7 +1577,7 @@
                         <i class="fas fa-lightbulb"></i>
                     </div>
                     <h4>Real Experience</h4>
-                    <p>Gain hands-on problem-solving experience.</p>
+                    <p>Gain hands-on problem-solving experience with real industry challenges.</p>
                 </div>
                 
                 <div class="benefit-card fade-in" style="transition-delay: 0.3s">
@@ -1755,7 +1585,7 @@
                         <i class="fas fa-briefcase"></i>
                     </div>
                     <h4>Career Opportunities</h4>
-                    <p>Access internships and recruitment opportunities.</p>
+                    <p>Access internships, recruitment opportunities, and professional development.</p>
                 </div>
             </div>
             
@@ -1765,13 +1595,13 @@
                     <li>Business and Engineering students from Algerian universities</li>
                     <li>Team-based participation (3-5 members recommended)</li>
                     <li>Currently enrolled in undergraduate or graduate programs</li>
-                    <li>Passion for innovation and problem-solving</li>
+                    <li>Passion for innovation, problem-solving, and making an impact</li>
                 </ul>
             </div>
             
             <div class="final-cta fade-in" style="transition-delay: 0.5s">
                 <h2>Your Innovation Journey Starts Here</h2>
-                <p>Registration closes December 26, 2024. Don't miss this opportunity to showcase your skills and make a real impact.</p>
+                <p>Don't miss this opportunity to showcase your skills, solve real problems, and make a lasting impact on Algeria's innovation landscape.</p>
                 <a href="https://forms.google.com/your-registration-link" class="btn btn-primary" target="_blank">
                     Register Your Team Now
                     <i class="fas fa-arrow-right"></i>
@@ -1808,8 +1638,8 @@
                         <li><a href="#hero">Home</a></li>
                         <li><a href="#about">About BrainLink</a></li>
                         <li><a href="#phases">Competition Phases</a></li>
-                        <li><a href="#timeline">Schedule</a></li>
                         <li><a href="#partners">Partners</a></li>
+                        <li><a href="#register">Registration</a></li>
                     </ul>
                 </div>
                 
@@ -1826,7 +1656,7 @@
             
             <div class="copyright">
                 <p>© 2024 BrainLink Innovation Competition. Organized by The Elite Club. All rights reserved.</p>
-                <p>Empowering the next generation of innovators to shape a brighter future.</p>
+                <p>Empowering the next generation of innovators to shape a brighter future for Algeria.</p>
             </div>
         </div>
     </footer>
