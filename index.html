@@ -192,13 +192,16 @@
         }
         
         .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--text-dark);
-            cursor: pointer;
-        }
+    display: none;
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 0;
+}
         
         /* ===== HERO SECTION ===== */
         .hero {
@@ -811,22 +814,28 @@
     <header id="header">
         <div class="container nav-container">
             <a href="#hero" class="logo">
-                <img src="Picture3.jpg" alt="BrainLink Logo" class="logo-img">
+                <img src="Picture1.png" alt="BrainLink Logo" class="logo-img">
             </a>
             
-            <nav>
-                <div class="nav-links">
-                    <a href="#hero">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#phases">Phases</a>
-                    <a href="#timeline">Schedule</a>
-                    <a href="#partners">Partners</a>
-                    <a href="#register" class="nav-cta">Register Now</a>
-                </div>
-                <button class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
+            <nav class="navigation">
+    <div class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#phases">Phases</a>
+        <a href="#timeline">Schedule</a>
+        <a href="#partners">Partners</a>
+        <a href="https://forms.google.com/your-actual-form-link" 
+           class="nav-cta" 
+           target="_blank" 
+           onclick="trackRegistration('header')">
+            Register Now
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <span class="menu-icon"></span>
+    </button>
+</nav>
         </div>
     </header>
 
@@ -864,13 +873,10 @@
         
         <div class="container">
             <div class="partner-card fade-in">
-                <img src="1200px-Henkel-Logo.svg.jpg" alt="Henkel Algeria" class="partner-logo">
+                <img src="1200px-Henkel-Logo.svg.png" alt="Henkel Algeria" class="partner-logo">
                 <p class="partner-description">
-                    Henkel Algeria, a leader in innovation and sustainability, is proud to partner with BrainLink to empower the next generation of problem-solvers. Through this collaboration, students will tackle real business challenges and gain invaluable industry insights.
+                    Henkel Algeria is proud to partner with BrainLink to empower the next generation of problem-solvers. Through this collaboration, students will tackle real business challenges and gain invaluable industry insights.
                 </p>
-                <a href="#" class="btn btn-secondary">
-                    Learn About Henkel <i class="fas fa-external-link-alt"></i>
-                </a>
             </div>
         </div>
         
