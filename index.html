@@ -239,58 +239,72 @@
             width: 100%;
         }
         
-       /* Mobile Menu Button - Simple Three Dots */
-.mobile-menu-btn {
-    display: none;
-    background: transparent;
-    border: none;
-    width: 30px;
-    height: 30px;
-    position: relative;
-    cursor: pointer;
-    z-index: 1001;
-    padding: 0;
-}
-
-.menu-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 6px;
-    height: 24px;
-    background: transparent;
-}
-
-.menu-icon::before,
-.menu-icon::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: var(--white);
-    border-radius: 50%;
-    left: 0;
-}
-
-.menu-icon::before {
-    top: 0;
-}
-
-.menu-icon::after {
-    bottom: 0;
-}
-
-.menu-icon {
-    background: var(--white);
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
+        /* Mobile Menu Button - Three Dots Stacked */
+        .mobile-menu-btn {
+            display: none;
+            background: transparent;
+            border: none;*
+            width: 30px;
+            height: 30px;
+            position: relative;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 0;
+        }
+        .menu-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 6px;
+            height: 20px;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* Top dot */
+        .menu-icon::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--white);
+            border-radius: 50%;
+        }
         
+        /* Middle dot */
+        .menu-icon {
+            background: var(--white);
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
         
+        /* Bottom dot */
+        .menu-icon::after {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--white);
+            border-radius: 50%;
+            position: absolute;
+            bottom: -7px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        /* Top dot positioning */
+        .menu-icon::before {
+            position: absolute;
+            top: -7px;
+            left: 50%;
+            transform: translateX(-50%);
+        } 
+    
         /* ===== MOBILE MENU OVERLAY ===== */
         .mobile-menu-overlay {
             position: fixed;
