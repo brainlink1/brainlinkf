@@ -384,7 +384,7 @@
             transform: rotate(90deg);
         }
         
-        /* ===== HERO IMAGE SECTION ===== */
+       /* ===== HERO IMAGE SECTION ===== */
         .hero-image-section {
             margin-top: var(--header-height);
             width: 100%;
@@ -395,59 +395,38 @@
             justify-content: center;
             overflow: hidden;
             padding: 0;
+            background: url('téléchargement.jpg') no-repeat center center;
+            background-size: cover;
         }
         
-        .hero-image-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
-        
-        .hero-image-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
-        }
-        
-        .hero-image-overlay {
+        .hero-image-content {
             position: relative;
             z-index: 2;
             text-align: center;
             max-width: 900px;
             margin: 0 auto;
-            background: var(--bg-overlay);
-            padding: 60px 40px;
-            border-radius: 24px;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            padding: 40px;
         }
         
-        .hero-image-overlay h1 {
+        .hero-image-content h1 {
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 25px;
             line-height: 1.1;
-            background: var(--red-gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
             position: relative;
         }
         
-        .hero-image-overlay p {
+        .hero-image-content p {
             font-size: 1.3rem;
-            color: var(--text-medium);
+            color: white;
             margin-bottom: 45px;
             line-height: 1.7;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
         }
         
         /* ===== BUTTONS ===== */
@@ -1216,10 +1195,8 @@
                 margin-top: var(--mobile-header-height);
             }
             
-            .hero-image-overlay {
-                padding: 40px 25px;
-                margin: 20px;
-                border-radius: 20px;
+            .hero-image-content {
+                padding: 30px 20px;
             }
             
             .hero-image-overlay h1 {
@@ -1461,10 +1438,8 @@
                 margin-top: var(--mobile-header-height);
             }
             
-            .hero-image-overlay {
-                padding: 35px 20px;
-                margin: 15px;
-                border-radius: 18px;
+            .hero-image-content {
+                padding: 25px 15px;
             }
             
             .hero-image-overlay h1 {
@@ -1643,23 +1618,17 @@
         </a>
     </div>
 
-    <!-- HERO IMAGE SECTION -->
+   <!-- HERO IMAGE SECTION -->
     <section id="hero-image" class="hero-image-section">
-        <div class="hero-image-bg">
-            <img src="téléchargement.jpg" alt="BrainLink Innovation Competition">
-        </div>
         <div class="container">
-            <div class="hero-image-overlay fade-in">
+            <div class="hero-image-content fade-in">
                 <h1>Innovation Meets Opportunity</h1>
-                <p>Join the innovation challenge that bridges business strategy with engineering excellence. BrainLink brings together the brightest minds to solve real industry challenges with Henkel Algeria.</p>
-                <a href="#register" class="btn btn-primary">
-                    Register Now
-                    <i class="fas fa-arrow-right"></i>
-                </a>
+                Register Now
+                <i class="fas fa-arrow-right"></i>
+            </a>
             </div>
         </div>
     </section>
-
     <!-- PARTNER SECTION -->
     <section id="partners" class="partner-section">
         <div class="container">
